@@ -322,6 +322,7 @@ class AutoStartPermissionHelper private constructor() {
         try {
             val intent = Intent()
             intent.component = ComponentName(packageName, componentName)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         } catch (exception: Exception) {
             exception.printStackTrace()
